@@ -1,5 +1,6 @@
 package lt.rokas.db.kirneilio.service;
 
+import lt.rokas.db.kirneilio.controller.rest.EquipmentDto;
 import lt.rokas.db.kirneilio.entity.Equipment;
 import lt.rokas.db.kirneilio.entity.Sauna;
 import lt.rokas.db.kirneilio.enums.EquipmentType;
@@ -46,6 +47,7 @@ public class EquipmentServiceImpl implements EquipmentService {
         return 0;
     }
 
+    //TODO REMOVE AFTER TESTING
     @Override
     public void generateTestData() {
 
@@ -67,6 +69,33 @@ public class EquipmentServiceImpl implements EquipmentService {
         equipmentRepository.save(eq2);
         equipmentRepository.save(eq3);
     }
-    //TODO REMOVE AFTER TESTING
 
+    @Override
+    public List<Equipment> getAllEquipment() {
+        return equipmentRepository.findAll();
+    }
+
+    @Override
+    public Equipment getEquipmentById(Long id) {
+        return equipmentRepository.getById(id);
+    }
+
+    @Override
+    public void saveEquipment(EquipmentDto equipment) {
+        Equipment eq = new Equipment(equipment.getPrice(), equipment.getEquipmentType());
+        equipmentRepository.save(eq);
+    }
+
+    @Override
+    public void updateEquipment(Equipment equipment) {
+        Equipment eq = equipmentRepository.getById(equipment.getId());
+        eq.setPrice(equipment.getPrice());
+        eq.setEquipmentType(equipment.getEquipmentType());
+        equipmentRepository.save(eq);
+    }
+
+    @Override
+    public void deleteEquipmentById(Long id) {
+        equipmentRepository.deleteById(id);
+    }
 }
