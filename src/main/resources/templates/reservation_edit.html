@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style th:inline="text">
+    body {
+        background: url([[@{/img/background.jpg}]]) no-repeat center center fixed;
+    }
+</style>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Kirneilio sodyba</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+    <a class="navbar-brand" href="#">Kirneilio sodyba</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Reservations list</a>
+                        <a class="nav-link" th:href="@{/reservations/new}">New reservation</a>
+                    </li>
+                </ul>
+    </div>
+</nav>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Reservation edit </h1>
+            <div class="card-body">
+                <form th:action="@{/reservations/update/{id}(id=${contractDto.id})}" th:object="${contractDto}" method="POST">
+                    <div class="form-group">
+                        <label> User Name </label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field="*{firstName}"
+                                class="form-control"
+                                placeholder="Enter User Name"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field="*{email}"
+                                class="form-control"
+                                placeholder="Enter email"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Phone number </label>
+                        <input
+                                type="text"
+                                name="firstName"
+                                th:field="*{phone}"
+                                class="form-control"
+                                placeholder="Enter phone number"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date:</label>
+                        <input type="date" th:field="*{date}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Exit Date:</label>
+                        <input type="date" th:field="*{exitDate}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Boat:</label>
+                        <input type="checkbox" th:field="*{boat}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Food:</label>
+                        <input type="checkbox" th:field="*{food}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sheets:</label>
+                        <input type="checkbox" th:field="*{sheets}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sauna:</label>
+                        <input type="checkbox" th:field="*{sauna}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hot tub:</label>
+                        <input type="checkbox" th:field="*{hotTub}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label> Comments </label>
+                        <input
+                                type="text"
+                                name="comments"
+                                th:field="*{comments}"
+                                class="form-control"
+                                placeholder="Enter Comments"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Extra order </label>
+                        <input
+                                type="text"
+                                name="comments"
+                                th:field="*{extraOrder}"
+                                class="form-control"
+                                placeholder="Enter Comments"
+                        />
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

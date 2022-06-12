@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style th:inline="text">
+    body {
+        background: url([[@{/img/background.jpg}]]) no-repeat center center fixed;
+    }
+</style>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Kirneilio sodyba</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+    <a class="navbar-brand" href="#">Kirneilio sodyba</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Reservations list</a>
+                <a class="nav-link" th:href="@{/reservations/new}">New reservation</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <h1> All reservations </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <a th:href="@{/reservations/new}" class="btn btn-primary btn-sm mb-3"> New reservation</a>
+        </div>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+            <th> Date</th>
+            <th> Exit date</th>
+            <th> Price</th>
+            <th> Is paid?</th>
+            <th> Customer</th>
+            <th> Phone number</th>
+            <th> Email</th>
+
+            <th> Actions</th>
+        </tr>
+        </thead>
+
+        <tbody class="table-dark">
+        <tr th:each="res: ${reservations}">
+            <td th:text="${res.reservation.date}"></td>
+            <td th:text="${res.reservation.exitDate}"></td>
+            <td th:text="${res.payment.price}"></td>
+            <td th:text="${res.payment.paid}"></td>
+            <td th:text="${res.user.firstName}"></td>
+            <td th:text="${res.user.phoneNumber}"></td>
+            <td th:text="${res.user.email}"></td>
+            <td>
+                <!--                <a th:href = "@{/groups/get/{id}(id=${group.id})}"-->
+                <!--                   class = "btn btn-primary">Preview</a>-->
+
+                <a th:href="@{/reservations/edit/{id}(id=${res.id})}"
+                   class="btn btn-primary">Edit</a>
+
+                <a th:href="@{/reservations/delete/{id}(id=${res.id})}"
+                   class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
