@@ -10,6 +10,4 @@ public interface EquipmentService {
     double getFoodPriceByType(FoodType breakfast);
 
     double getSaunaPriceByType(SaunaType sauna);
-
-    void saveSauna();
 }
