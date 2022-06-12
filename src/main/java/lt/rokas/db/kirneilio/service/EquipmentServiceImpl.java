@@ -45,4 +45,28 @@ public class EquipmentServiceImpl implements EquipmentService {
         }
         return 0;
     }
+
+    @Override
+    public void generateTestData() {
+
+        Sauna sauna1 = new Sauna();
+        sauna1.setType(SaunaType.SAUNA);
+        sauna1.setPrice(50);
+        Sauna sauna2 = new Sauna();
+        sauna1.setType(SaunaType.HOT_TUB);
+        sauna1.setPrice(70);
+
+        saunaRepository.save(sauna1);
+        saunaRepository.save(sauna2);
+
+        Equipment eq1 = new Equipment(50, EquipmentType.BOAT);
+        Equipment eq2 = new Equipment(70, EquipmentType.TENNIS);
+        Equipment eq3 = new Equipment(80, EquipmentType.SHEETS);
+
+        equipmentRepository.save(eq1);
+        equipmentRepository.save(eq2);
+        equipmentRepository.save(eq3);
+    }
+    //TODO REMOVE AFTER TESTING
+
 }

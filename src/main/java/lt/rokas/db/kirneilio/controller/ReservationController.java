@@ -3,6 +3,7 @@ package lt.rokas.db.kirneilio.controller;
 import lt.rokas.db.kirneilio.dto.ContractDto;
 import lt.rokas.db.kirneilio.entity.User;
 import lt.rokas.db.kirneilio.service.ContractService;
+import lt.rokas.db.kirneilio.service.EquipmentService;
 import lt.rokas.db.kirneilio.service.ReservationService;
 import lt.rokas.db.kirneilio.utils.ContractPopulator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class ReservationController {
     @Autowired
     ContractService contractService;
 
+    @Autowired
+    EquipmentService equipmentService;
+
     @GetMapping("/reservations/new")
     public String reserve(Model model) {
         model.addAttribute("contractDto", new ContractDto());
@@ -35,6 +39,7 @@ public class ReservationController {
 
     @GetMapping("/")
     public String getAllReservations(Model model) {
+        equipmentService.generateTestData();
         model.addAttribute("reservations", contractService.getAllContracts());
         return "reservations_list";
     }
