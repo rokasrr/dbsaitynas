@@ -26,6 +26,11 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/users/{id}")
+    public User getUserById(@PathVariable Long id) {
+        return userService.getUserById(id);
+    }
+
     @PostMapping("/users/new")
     public ResponseEntity<HttpStatus> createUser(@RequestBody User user) {
         userService.saveUser(user);

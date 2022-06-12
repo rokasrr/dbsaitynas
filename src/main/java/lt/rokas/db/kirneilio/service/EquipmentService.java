@@ -7,6 +7,7 @@ import lt.rokas.db.kirneilio.enums.FoodType;
 import lt.rokas.db.kirneilio.enums.SaunaType;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface EquipmentService {
     double getPriceByType(EquipmentType boat);
@@ -19,7 +20,7 @@ public interface EquipmentService {
 
     List<Equipment> getAllEquipment();
 
-    Equipment getEquipmentById(Long id);
+    Optional<Equipment> getEquipmentById(Long id);
 
     void saveEquipment(EquipmentDto equipment);
 

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EquipmentController {
@@ -20,7 +21,7 @@ public class EquipmentController {
     }
 
     @GetMapping("/equipment/{id}")
-    public Equipment getEquipmentById(@PathVariable Long id) {
+    public Optional<Equipment> getEquipmentById(@PathVariable Long id) {
         return equipmentService.getEquipmentById(id);
     }
 

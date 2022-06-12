@@ -76,8 +76,8 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public Equipment getEquipmentById(Long id) {
-        return equipmentRepository.getById(id);
+    public Optional<Equipment> getEquipmentById(Long id) {
+        return equipmentRepository.findById(id);
     }
 
     @Override
