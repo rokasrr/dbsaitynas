@@ -1,7 +1,7 @@
 package lt.rokas.db.kirneilio.controller.rest;
 
+import lt.rokas.db.kirneilio.dto.EquipmentDto;
 import lt.rokas.db.kirneilio.entity.Equipment;
-import lt.rokas.db.kirneilio.entity.User;
 import lt.rokas.db.kirneilio.service.EquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

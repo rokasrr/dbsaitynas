@@ -1,6 +1,6 @@
 package lt.rokas.db.kirneilio.service;
 
-import lt.rokas.db.kirneilio.controller.rest.EquipmentDto;
+import lt.rokas.db.kirneilio.dto.EquipmentDto;
 import lt.rokas.db.kirneilio.entity.Equipment;
 import lt.rokas.db.kirneilio.enums.EquipmentType;
 import lt.rokas.db.kirneilio.enums.FoodType;

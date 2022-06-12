@@ -1,4 +1,4 @@
-package lt.rokas.db.kirneilio.controller.rest;
+package lt.rokas.db.kirneilio.dto;
 
 import lt.rokas.db.kirneilio.enums.EquipmentType;
 
