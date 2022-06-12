@@ -9,9 +9,6 @@ public class LostItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Contract contract;
-
     private Date date;
 
     public LostItem() {
@@ -23,14 +20,6 @@ public class LostItem {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Contract getContract() {
-        return contract;
-    }
-
-    public void setContract(Contract contract) {
-        this.contract = contract;
     }
 
     public Date getDate() {
