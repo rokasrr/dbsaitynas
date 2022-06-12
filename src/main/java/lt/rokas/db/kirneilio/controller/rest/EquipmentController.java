@@ -19,7 +19,7 @@ public class EquipmentController {
         this.equipmentService = equipmentService;
     }
 
-    @GetMapping("/equipment")
+    @GetMapping("/equipment/{id}")
     public Equipment getEquipmentById(@PathVariable Long id) {
         return equipmentService.getEquipmentById(id);
     }
@@ -45,5 +45,9 @@ public class EquipmentController {
     public ResponseEntity<HttpStatus> deleteEquipment(@PathVariable Long id) {
         equipmentService.deleteEquipmentById(id);
         return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    public void setEquipmentService(EquipmentService equipmentService) {
+        this.equipmentService = equipmentService;
     }
 }
