@@ -5,6 +5,9 @@ import lt.rokas.db.kirneilio.enums.SaunaType;
 
 import javax.persistence.*;
 
+/**
+ * Sauna entity class
+ */
 @Entity
 public class Sauna {
     @Id

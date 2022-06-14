@@ -3,6 +3,9 @@ package lt.rokas.db.kirneilio.entity;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Contract entity class
+ */
 @Entity
 public class Contract {
     @Id

@@ -2,6 +2,9 @@ package lt.rokas.db.kirneilio.entity;
 
 import javax.persistence.*;
 
+/**
+ * Review entity class
+ */
 @Entity
 public class Review {
     @Id

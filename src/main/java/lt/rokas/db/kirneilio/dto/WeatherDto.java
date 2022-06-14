@@ -1,5 +1,8 @@
 package lt.rokas.db.kirneilio.dto;
 
+/**
+ * Weather Dto classss
+ */
 public class WeatherDto {
     private String temperature;
     private String humidity;

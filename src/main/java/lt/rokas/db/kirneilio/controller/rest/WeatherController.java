@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
+/**
+ * Weather controller to get weather in Moletai
+ */
 @RestController
 public class WeatherController {
 

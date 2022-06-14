@@ -9,6 +9,10 @@ import lt.rokas.db.kirneilio.enums.SaunaType;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Contract Model and Dto populator
+ *
+ */
 public class ContractPopulator {
 
     public static ContractDto populateModelToDto(Contract contract) {

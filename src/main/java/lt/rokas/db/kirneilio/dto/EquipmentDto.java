@@ -2,8 +2,9 @@ package lt.rokas.db.kirneilio.dto;
 
 import lt.rokas.db.kirneilio.enums.EquipmentType;
 
-import javax.persistence.Column;
-
+/**
+ * Equipment DTO class
+ */
 public class EquipmentDto {
 
     private double price;

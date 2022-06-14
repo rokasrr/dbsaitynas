@@ -4,6 +4,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+/**
+ * Contract DTO class
+ */
 public class ContractDto {
     String firstName;
     String email;

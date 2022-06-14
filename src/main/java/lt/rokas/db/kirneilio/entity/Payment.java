@@ -2,6 +2,9 @@ package lt.rokas.db.kirneilio.entity;
 
 import javax.persistence.*;
 
+/**
+ * Payment entity class
+ */
 @Entity
 public class Payment {
     @Id

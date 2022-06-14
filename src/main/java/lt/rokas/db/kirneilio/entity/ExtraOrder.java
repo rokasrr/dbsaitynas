@@ -4,6 +4,9 @@ import lt.rokas.db.kirneilio.enums.EquipmentType;
 
 import javax.persistence.*;
 
+/**
+ * ExtraOrder  entity class
+ */
 @Entity
 public class ExtraOrder {
     @Id

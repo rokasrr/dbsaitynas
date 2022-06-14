@@ -4,6 +4,9 @@ import lt.rokas.db.kirneilio.enums.FoodType;
 
 import javax.persistence.*;
 
+/**
+ * Food entity class
+ */
 @Entity
 @Table(name = "food")
 public class Food {

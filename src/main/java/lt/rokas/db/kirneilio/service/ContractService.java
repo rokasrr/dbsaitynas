@@ -5,6 +5,9 @@ import lt.rokas.db.kirneilio.entity.Contract;
 
 import java.util.List;
 
+/**
+ * ContractService interface
+ */
 public interface ContractService {
     void saveContract(Contract contract);
 

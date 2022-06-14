@@ -4,6 +4,9 @@ import lt.rokas.db.kirneilio.enums.EquipmentType;
 
 import javax.persistence.*;
 
+/**
+ * Equipment entity class
+ */
 @Entity
 @Table(name = "equipment")
 public class Equipment {

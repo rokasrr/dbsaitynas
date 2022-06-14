@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * User rest controller to acces users
+ */
 @RestController
 public class UserController {
 
