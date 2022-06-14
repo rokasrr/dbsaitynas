@@ -9,9 +9,7 @@ import lt.rokas.db.kirneilio.utils.ContractPopulator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -42,7 +40,8 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     private double calculatePrice(ContractDto contractDto) {
-//        equipmentService.saveSauna();
+//        equipmentService.saveSauna(); TODO: remove these lines after testing
+
         double price = 0;
         if (contractDto.isBoat()) {
             price += equipmentService.getPriceByType(EquipmentType.BOAT);
